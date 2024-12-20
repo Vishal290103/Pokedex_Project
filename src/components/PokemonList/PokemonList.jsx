@@ -11,6 +11,7 @@ function PokemonList(){
     const [prevUrl,setPrevUrl]=useState('');
 
     async function downloadPokemons(){
+        setIsLoading(true);
         const response=await axios.get(pokedexUrl);//THIS downloads list of 20 pokemons
 
         const pokemonResults=response.data.results;//We get the array of pokemon from result
