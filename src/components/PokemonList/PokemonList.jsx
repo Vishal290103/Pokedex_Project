@@ -17,7 +17,7 @@ function PokemonList(){
         const pokemonResults=response.data.results;//We get the array of pokemon from result
         console.log(response.data);
         setNextUrl(response.data.next);
-        setPrevUrl(response.data.prev);
+        setPrevUrl(response.data.previous);
 
         //iterating over the array of pokemons ,and using their url ,to create an array of promises
         //that will download those 20 pokemons 
@@ -43,7 +43,7 @@ function PokemonList(){
         setPokemonList(pokeListResult);
         setIsLoading(false);
     }
-    useEffect(async()=>{
+    useEffect(()=>{
         downloadPokemons();
         },[pokedexUrl]);
 
